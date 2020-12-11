@@ -10,7 +10,7 @@ The challenge had different possible components (some of which couldn't be deliv
 4. Upload the CQL as a knowledge object within the HAPI FHIR server. 
 5. Give a presentation on the process, challenge of implementation in clinical practice and technical difficulties. 
 
-#### The two files in this repository are  
+#### The 5 files/ directory in this repository are  
 + FHIR_TEST_PATIENTS_ENCOUNTERS_OBSERVATION.JSON - The set of synthetic patients/encounters/observation/conditions. 
 + AKI_NICE_CQL_COLLABORATHON.cql - The functional although not  yet optimal CQL query; 
 + ImageOfExecutedQueryAndOutput.png - An image showing the output of the query
@@ -21,7 +21,6 @@ The challenge had different possible components (some of which couldn't be deliv
 After the event I created an angular 9 Application to
 1. upload/edit/delete patient 
 2. upload/edit/delete library containing base64 ELM representation  of a knowledge object - using CQL-TO-ELM Java Application https://github.com/cqframework/clinical_quality_language/blob/master/Src/java/cql-to-elm/OVERVIEW.md
-3. The application aim is to automatically applies (or run) one of knwoeldge object stored as a library on the FHIR server using javascript libraries (i.e. cql-exec-fhir, cql-execution)   
+3. The application aim is to automatically applies (or run) one of knowledge object stored as a library on the FHIR server using javascript libraries (i.e. cql-exec-fhir, cql-execution)   
 
-IT IS NOT YET WORKING BUT I AM NEARLY THERE (TIME ALLOWS)   
-The rationale would be to automatically save "ready to run" knwoledge artifacts.
+IT IS NOT YET WORKING BUT I AM NEARLY THERE (IF TIME ALLOWS)   ==> The rationale would be to automatically save "ready to run" knwoledge artifacts.
