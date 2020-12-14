@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm12">
+        <span *ngIf="patientURL">Update </span><span *ngIf="!patientURL">Add New </span>Patient <span *ngIf="patientURL">: <a href="{{patientURL}}" target="_blank">{{patientURL}}</a> </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm12">
+        <textarea [(ngModel)]='patientAsText'  rows="10" cols="100"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm4">
+        <button *ngIf="!patientURL" (click)="addPatient()" name="Add Patient" value="Add Patient">Add Patient</button>
+        <button *ngIf="patientURL" (click)="updatePatient()" name="Update Patient" value="Update Patient">Update Patient</button>
+        <button  *ngIf="patientURL" (click)="cancelAddPatient()" name="CancelAddPatient" value="CancelAddPatient">
+          Cancel Update</button>
+      </div>
+    </div>
+  </div>
+</div>

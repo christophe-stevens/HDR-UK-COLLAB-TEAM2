@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm12">
+        <span *ngIf="libraryURL">Update </span><span *ngIf="!libraryURL">Add New </span>Patient <span *ngIf="libraryURL">: <a href="{{libraryURL}}" target="_blank">{{libraryURL}}</a> </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm12">
+        <textarea [(ngModel)]='libraryAsText'  rows="10" cols="100"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm4">
+        <button *ngIf="!libraryURL" (click)="addLibrary()" name="Add Library" value="Add Library">Add Library</button>
+        <button *ngIf="libraryURL" (click)="updateLibrary()" name="Update Library" value="Update Library">Update Library</button>
+        <button  *ngIf="libraryURL" (click)="cancelAddLibrary()" name="CancelAddLibrary" value="CancelAddLibrary">
+          Cancel Update</button>
+      </div>
+    </div>
+  </div>
+</div>

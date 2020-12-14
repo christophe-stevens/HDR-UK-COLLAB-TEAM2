@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="input-group col-sm12">
+        <input class="form-control py-2" [(ngModel)]="searchTerm" type="search" value="search" id="example-search-input"/>
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="listLibraries()">
+                Search Name
+            </button>
+          </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm12">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Run</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let library of libraryList">
+            <th scope="row">{{library.resource.id}}</th>
+            <td>{{library.resource.title}}</td>
+            <td><button (click)="edit(library)">Edit</button></td>
+            <td><button (click)="delete(library.fullUrl)">Delete</button></td>
+            <td><button (click)="run(library)">Run</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

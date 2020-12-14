@@ -1,0 +1,40 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">HDR UK Team 2</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" (click)="toggleClass($event, '#home')">HOME</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="#" (click)="toggleClass($event, '#crud')">FHIR CRUD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="toggleClass($event, '#search')">CQL</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</div>
+
+<div class="content" role="main">
+
+  <div id="content-body">
+    <div class="tab-pane active" id="home"  *ngIf="selectedPanel=='#home'">
+      Welcome this is possibly team 2 solution
+    </div>
+    <div class="tab-pane" id="crud" *ngIf="selectedPanel=='#crud'">
+      <app-crud-patient></app-crud-patient>
+    </div>
+    <div class="tab-pane" id="search"  *ngIf="selectedPanel=='#search'">
+      <app-cql-search></app-cql-search>
+    </div>
+  </div>
+
+</div>
+
+

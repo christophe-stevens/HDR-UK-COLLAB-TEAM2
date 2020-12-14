@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+       <div class="input-group col-sm12">
+          <input class="form-control py-2" [(ngModel)]="searchTerm" type="search" value="search" id="example-search-input"/>
+          <span class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="listPatient()">
+                Search Name
+            </button>
+          </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm12">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Family</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let patient of patientsList">
+            <th scope="row">{{patient.resource.identifier.value}}</th>
+            <td>{{patient.resource.name[0].family}}</td>
+            <td>{{patient.resource.name[0].given[0]}}</td>
+            <td>{{patient.resource.name[0].given[1]}}</td>
+            <td><button (click)="edit(patient)">Edit</button></td>
+            <td><button (click)="delete(patient.fullUrl)">Delete</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

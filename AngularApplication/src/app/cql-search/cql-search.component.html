@@ -1,0 +1,24 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active"  id="libraryListTab"
+       href="#" (click)="toggleClass($event, '#libraryList')">Library </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  id="libraryAddUpdateTab"
+       href="#" (click)="toggleClass($event, '#libraryAddUpdate')"><span *ngIf="currentLibraryURL">Update </span><span *ngIf="!currentLibraryURL">Add</span> Library</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  id="libraryRunTab"
+       href="#" (click)="toggleClass($event, '#libraryRun')">Run Library</a>
+  </li>
+</ul>
+
+<div class="tab-pane active" id="libraryList"  *ngIf="selectedPanel=='#libraryList'">
+  <app-list-library [parentComponent]="that"></app-list-library>
+</div>
+<div class="tab-pane" id="libraryAddUpdate" *ngIf="selectedPanel=='#libraryAddUpdate'">
+  <app-add-library [parentComponent]="that" [libraryAsText]="currentLibrary" [libraryURL]="currentLibraryURL"></app-add-library>
+</div>
+<div class="tab-pane" id="libraryRun" *ngIf="selectedPanel=='#libraryRun'">
+  <app-run-library [parentComponent]="that" [library]="currentLibrary"></app-run-library>
+</div>
